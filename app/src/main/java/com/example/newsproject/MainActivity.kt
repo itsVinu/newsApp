@@ -195,15 +195,16 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
     public fun loadJson(keyword:String){
 
         var country = Utils.country
-//        var language = Utils.Language
 
         everyadapter.notifyDataSetChanged()
+
         if (keyword.length > 2){
 
             recyclerView.apply {
                 layoutManager = LinearLayoutManager(this@MainActivity,RecyclerView.VERTICAL,false)
                 adapter = everyadapter
             }
+
             everyadapter.notifyDataSetChanged()
 
             everyadapter.onItemClick = {
@@ -238,7 +239,9 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
                 }
             }
         }
+
         else {
+
             recyclerView.apply {
                 layoutManager = LinearLayoutManager(this@MainActivity,RecyclerView.VERTICAL,false)
                 adapter = topheadlineadapter
