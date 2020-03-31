@@ -27,6 +27,13 @@ class DetailActivity : AppCompatActivity() {
 
         setSupportActionBar(toolbar)
 
+        if (Build.VERSION.SDK_INT >=18){
+            val window = this.window
+
+            window.clearFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+            window.statusBarColor = this.resources.getColor(R.color.colorTransparent)
+        }
+
         var image = intent.getStringExtra("category image")
         var title1 = intent.getStringExtra("category title")
         var desc = intent.getStringExtra("category desc")
@@ -56,13 +63,6 @@ class DetailActivity : AppCompatActivity() {
         date_ago.setText(published)
         time_ago.setText(source)
         title_on_appbar.setText(titlebar)
-
-        if (Build.VERSION.SDK_INT >=21){
-            val window = this.window
-
-            window.clearFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-            window.statusBarColor = this.resources.getColor(R.color.colorTransparent)
-        }
 
     }
 
