@@ -2,9 +2,11 @@ package com.example.newsproject
 
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.WindowManager
 import android.webkit.WebViewClient
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -54,6 +56,14 @@ class DetailActivity : AppCompatActivity() {
         date_ago.setText(published)
         time_ago.setText(source)
         title_on_appbar.setText(titlebar)
+
+        if (Build.VERSION.SDK_INT >=21){
+            val window = this.window
+
+            window.clearFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+            window.statusBarColor = this.resources.getColor(R.color.colorTransparent)
+        }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
