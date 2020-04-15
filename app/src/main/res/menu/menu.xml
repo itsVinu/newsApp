@@ -21,10 +21,10 @@
         android:id="@+id/sports"
         />
 
-    <item
-        android:title="Politics"
-        android:id="@+id/politics"
-        />
+<!--    <item-->
+<!--        android:title="Politics"-->
+<!--        android:id="@+id/politics"-->
+<!--        />-->
 
     <item
         android:title="Entertainment"

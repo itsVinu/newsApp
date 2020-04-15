@@ -14,6 +14,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/toolbar"
+            android:background="@android:color/black"
+            app:titleTextColor="@android:color/holo_orange_dark"
             app:title="News Sake"
             style="@android:style/Animation"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
@@ -32,6 +34,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@android:color/black"
                 android:orientation="vertical">
 
                 <TextView
@@ -42,6 +45,7 @@
                     android:textStyle="bold"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
+                    android:textColor="@android:color/white"
                     android:layout_marginTop="10dp"/>
 
                 <androidx.recyclerview.widget.RecyclerView

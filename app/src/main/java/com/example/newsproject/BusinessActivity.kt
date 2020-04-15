@@ -38,7 +38,7 @@ class BusinessActivity : AppCompatActivity() , NavigationView.OnNavigationItemSe
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_business)
 
-        setSupportActionBar(toolbar4)
+        setSupportActionBar(toolbar2)
 
         recyclerView4.apply {
             layoutManager = LinearLayoutManager(this@BusinessActivity, RecyclerView.VERTICAL,false)
@@ -75,7 +75,7 @@ class BusinessActivity : AppCompatActivity() , NavigationView.OnNavigationItemSe
         val toggle = ActionBarDrawerToggle(
             this,
             drawer,
-            toolbar,
+            toolbar2,
             R.string.open,
             R.string.close
         )
@@ -102,37 +102,37 @@ class BusinessActivity : AppCompatActivity() , NavigationView.OnNavigationItemSe
             R.id.sports -> {
                 startActivity(Intent(this, SportsActivity::class.java))
                 Toast.makeText(this,"Sports", Toast.LENGTH_SHORT).show()
-                finish()
+//                finish()
             }
             R.id.business -> {
                 startActivity(Intent(this, BusinessActivity::class.java))
                 Toast.makeText(this,"Business", Toast.LENGTH_SHORT).show()
-                finish()
+//                finish()
             }
             R.id.entertainment -> {
                 startActivity(Intent(this, EntertainmentActivity::class.java))
                 Toast.makeText(this,"Entertainment", Toast.LENGTH_SHORT).show()
-                finish()
+//                finish()
             }
             R.id.health -> {
                 startActivity(Intent(this, HealthActivity::class.java))
                 Toast.makeText(this,"Health", Toast.LENGTH_SHORT).show()
-                finish()
+//                finish()
             }
             R.id.science -> {
                 startActivity(Intent(this, ScienceActivity::class.java))
                 Toast.makeText(this,"Science", Toast.LENGTH_SHORT).show()
-                finish()
+//                finish()
             }
-            R.id.politics -> {
-                startActivity(Intent(this, PoliticsActivity::class.java))
-                Toast.makeText(this,"Politics", Toast.LENGTH_SHORT).show()
-                finish()
-            }
+//            R.id.politics -> {
+//                startActivity(Intent(this, PoliticsActivity::class.java))
+//                Toast.makeText(this,"Politics", Toast.LENGTH_SHORT).show()
+//                finish()
+//            }
             R.id.technology -> {
                 startActivity(Intent(this, TechnologyActivity::class.java))
                 Toast.makeText(this,"Technology", Toast.LENGTH_SHORT).show()
-                finish()
+//                finish()
             }
         }
 

@@ -13,8 +13,10 @@
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/toolbar6"
+            android:id="@+id/toolbar4"
+            android:background="@android:color/black"
             app:title="Health News"
+            app:titleTextColor="@android:color/holo_orange_dark"
             style="@android:style/Animation"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
     </com.google.android.material.appbar.AppBarLayout>
@@ -32,6 +34,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@android:color/black"
                 android:orientation="vertical">
 
                 <TextView
@@ -39,6 +42,8 @@
                     android:layout_height="wrap_content"
                     android:text="Top HeadLines"
                     android:textStyle="bold"
+                    android:background="@android:color/black"
+                    android:textColor="@android:color/white"
                     android:textSize="17dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"

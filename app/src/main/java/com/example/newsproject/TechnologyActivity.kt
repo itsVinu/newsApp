@@ -39,7 +39,7 @@ class TechnologyActivity : AppCompatActivity()  , NavigationView.OnNavigationIte
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_technology)
 
-        setSupportActionBar(toolbar10)
+        setSupportActionBar(toolbar8)
 
         recyclerView10.apply {
             layoutManager = LinearLayoutManager(this@TechnologyActivity, RecyclerView.VERTICAL,false)
@@ -76,7 +76,7 @@ class TechnologyActivity : AppCompatActivity()  , NavigationView.OnNavigationIte
         val toggle = ActionBarDrawerToggle(
             this,
             drawer,
-            toolbar,
+            toolbar8,
             R.string.open,
             R.string.close
         )
@@ -103,37 +103,37 @@ class TechnologyActivity : AppCompatActivity()  , NavigationView.OnNavigationIte
             R.id.sports -> {
                 startActivity(Intent(this, SportsActivity::class.java))
                 Toast.makeText(this,"Sports", Toast.LENGTH_SHORT).show()
-                finish()
+//                finish()
             }
             R.id.business -> {
                 startActivity(Intent(this, BusinessActivity::class.java))
                 Toast.makeText(this,"Business", Toast.LENGTH_SHORT).show()
-                finish()
+//                finish()
             }
             R.id.entertainment -> {
                 startActivity(Intent(this, EntertainmentActivity::class.java))
                 Toast.makeText(this,"Entertainment", Toast.LENGTH_SHORT).show()
-                finish()
+//                finish()
             }
             R.id.health -> {
                 startActivity(Intent(this, HealthActivity::class.java))
                 Toast.makeText(this,"Health", Toast.LENGTH_SHORT).show()
-                finish()
+//                finish()
             }
             R.id.science -> {
                 startActivity(Intent(this, ScienceActivity::class.java))
                 Toast.makeText(this,"Science", Toast.LENGTH_SHORT).show()
-                finish()
+//                finish()
             }
-            R.id.politics -> {
-                startActivity(Intent(this, PoliticsActivity::class.java))
-                Toast.makeText(this,"Politics", Toast.LENGTH_SHORT).show()
-                finish()
-            }
+//            R.id.politics -> {
+//                startActivity(Intent(this, PoliticsActivity::class.java))
+//                Toast.makeText(this,"Politics", Toast.LENGTH_SHORT).show()
+//                finish()
+//            }
             R.id.technology -> {
                 startActivity(Intent(this, TechnologyActivity::class.java))
                 Toast.makeText(this,"Technology", Toast.LENGTH_SHORT).show()
-                finish()
+//                finish()
             }
         }
         drawer.closeDrawer(GravityCompat.START)   //used to close the navigation drawer when the items inside the drawer are clicked
