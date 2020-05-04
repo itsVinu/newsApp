@@ -21,11 +21,6 @@
         android:id="@+id/sports"
         />
 
-<!--    <item-->
-<!--        android:title="Politics"-->
-<!--        android:id="@+id/politics"-->
-<!--        />-->
-
     <item
         android:title="Entertainment"
         android:id="@+id/entertainment"
@@ -39,6 +34,11 @@
     <item
         android:title="Technology"
         android:id="@+id/technology"
+        />
+
+    <item
+        android:title="Watch Live News"
+        android:id="@+id/liveNews"
         />
 
 </menu>

@@ -17,6 +17,10 @@ import com.example.newsproject.Adapter.EveryAdapter
 import com.example.newsproject.Adapter.PoliticAdapter
 import com.example.newsproject.TopHeadlineModel.topheadlinepoliticsresponse.ArticlesItem
 import com.example.newsproject.client.Client
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdSize
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.main.*
@@ -27,6 +31,8 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class PoliticsActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelectedListener {
+
+    lateinit var mAdView : AdView
 
     val list = arrayListOf<ArticlesItem>()
     val politicadapter = PoliticAdapter(list)
@@ -40,6 +46,16 @@ class PoliticsActivity : AppCompatActivity() , NavigationView.OnNavigationItemSe
         setContentView(R.layout.activity_politics)
 
         setSupportActionBar(toolbar5)
+
+        val adView = AdView(this)
+        adView.adSize = AdSize.BANNER
+        adView.adUnitId = "ca-app-pub-3940256099942544/6300978111"
+
+        MobileAds.initialize(this) {}
+        mAdView = findViewById(R.id.adView)
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
+        val adSize = AdSize(300, 50)
 
         recyclerView7.apply {
             layoutManager = LinearLayoutManager(this@PoliticsActivity, RecyclerView.VERTICAL,false)

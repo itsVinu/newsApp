@@ -14,8 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/toolbar"
-            android:background="@android:color/black"
-            app:titleTextColor="@android:color/holo_orange_dark"
+            app:titleTextColor="@android:color/black"
             app:title="News Sake"
             style="@android:style/Animation"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
@@ -27,14 +26,14 @@
         android:background="@color/colorBackground"
         tools:ignore="NotSibling" >
 
-        <ScrollView
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/black"
+                android:background="@android:color/white"
                 android:orientation="vertical">
 
                 <TextView
@@ -45,7 +44,7 @@
                     android:textStyle="bold"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
-                    android:textColor="@android:color/white"
+                    android:textColor="@android:color/black"
                     android:layout_marginTop="10dp"/>
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -56,7 +55,19 @@
 
             </LinearLayout>
 
-        </ScrollView>
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.gms.ads.AdView
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            ads:adSize="BANNER"
+            ads:adUnitId="ca-app-pub-1351937667691042/8256886789">
+        </com.google.android.gms.ads.AdView>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

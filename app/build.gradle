@@ -46,4 +46,8 @@ dependencies {
     //Times Formater
     implementation 'org.ocpsoft.prettytime:prettytime:4.0.1.Final'
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
+
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.4'
+
+    implementation 'com.google.android.gms:play-services-ads:19.1.0'
 }

@@ -3,6 +3,7 @@ package com.example.newsproject
 import android.app.SearchManager
 import android.content.Context
 import android.content.Intent
+import android.net.ConnectivityManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -17,6 +18,10 @@ import com.example.newsproject.Adapter.EveryAdapter
 import com.example.newsproject.Adapter.HealthAdapter
 import com.example.newsproject.TopHeadlineModel.topheadlinehealthresponse.ArticlesItem
 import com.example.newsproject.client.Client
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdSize
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.main.*
@@ -27,6 +32,8 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class HealthActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelectedListener {
+
+    lateinit var mAdView : AdView
 
     val list = arrayListOf<ArticlesItem>()
     val healthadapter = HealthAdapter(list)
@@ -39,6 +46,16 @@ class HealthActivity : AppCompatActivity() , NavigationView.OnNavigationItemSele
         setContentView(R.layout.activity_health)
 
         setSupportActionBar(toolbar4)
+
+        val adView = AdView(this)
+        adView.adSize = AdSize.BANNER
+        adView.adUnitId = "ca-app-pub-1351937667691042/6125068531"
+
+        MobileAds.initialize(this) {}
+        mAdView = findViewById(R.id.adView)
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
+        val adSize = AdSize(300, 50)
 
         recyclerView6.apply {
             layoutManager = LinearLayoutManager(this@HealthActivity, RecyclerView.VERTICAL,false)
@@ -61,16 +78,26 @@ class HealthActivity : AppCompatActivity() , NavigationView.OnNavigationItemSele
             startActivity(intent)
         }
 
-        GlobalScope.launch {
-            val response = withContext(Dispatchers.IO) { Client.api.getTopHeadlinesHealth() }
-            if (response.isSuccessful) {
-                response.body()?.let { res ->
-                    res.articles?.let { list.addAll(it)
-                        Log.i("abc",it.toString())}
-                    runOnUiThread { healthadapter.notifyDataSetChanged() }
+        var connectivityManager = this.getSystemService(AppCompatActivity.CONNECTIVITY_SERVICE)as ConnectivityManager
+        val networkInfo = connectivityManager.activeNetworkInfo
+
+        if (networkInfo != null && networkInfo.isConnected){
+            GlobalScope.launch {
+                val response = withContext(Dispatchers.IO) { Client.api.getTopHeadlinesHealth() }
+                if (response.isSuccessful) {
+                    response.body()?.let { res ->
+                        res.articles?.let { list.addAll(it)
+                            Log.i("abc",it.toString())}
+                        runOnUiThread { healthadapter.notifyDataSetChanged() }
+                    }
                 }
             }
         }
+        else if (networkInfo == null){
+            Toast.makeText(this,"Network connection not available",Toast.LENGTH_SHORT).show()
+        }
+
+
 
         val toggle = ActionBarDrawerToggle(
             this,
@@ -124,11 +151,11 @@ class HealthActivity : AppCompatActivity() , NavigationView.OnNavigationItemSele
                 Toast.makeText(this,"Science", Toast.LENGTH_SHORT).show()
 //                finish()
             }
-//            R.id.politics -> {
-//                startActivity(Intent(this, PoliticsActivity::class.java))
-//                Toast.makeText(this,"Politics", Toast.LENGTH_SHORT).show()
+            R.id.liveNews -> {
+                startActivity(Intent(this, LiveNewsActivity::class.java))
+                Toast.makeText(this,"Politics", Toast.LENGTH_SHORT).show()
 //                finish()
-//            }
+            }
             R.id.technology -> {
                 startActivity(Intent(this, TechnologyActivity::class.java))
                 Toast.makeText(this,"Technology", Toast.LENGTH_SHORT).show()

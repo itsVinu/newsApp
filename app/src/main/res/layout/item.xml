@@ -2,13 +2,11 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/colbg"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colbg"
         android:layout_marginLeft="11dp"
         android:layout_marginRight="11dp"
         android:layout_marginTop="7dp"
@@ -18,8 +16,7 @@
         
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colbg">
+            android:layout_height="wrap_content">
             
             <ImageView
                 android:layout_width="match_parent"
@@ -43,7 +40,7 @@
                 android:drawablePadding="10dp"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:textColor="@android:color/white"
+                android:textColor="@android:color/black"
                 android:singleLine="true"
                 android:layout_marginRight="16dp"
                 android:text="Author"
@@ -90,7 +87,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-light"
                 android:textStyle="bold"
-                android:textColor="@android:color/white"
+                android:textColor="@android:color/black"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:text="Title"
@@ -105,7 +102,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginTop="5dp"
-                android:textColor="@android:color/white"
+                android:textColor="@android:color/black"
                 android:layout_below="@+id/title"
                 android:text="Desc"/>
 
@@ -120,7 +117,7 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="16dp"
                 android:textStyle="bold"
-                android:textColor="@android:color/white"
+                android:textColor="@android:color/black"
                 android:maxLines="1"
                 android:drawablePadding="10dp"
                 android:singleLine="true"
@@ -134,7 +131,7 @@
                 android:layout_below="@+id/desc"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:textColor="@android:color/white"
+                android:textColor="@android:color/black"
                 android:layout_toRightOf="@+id/source"
                 android:maxLines="1"
                 android:drawablePadding="10dp"

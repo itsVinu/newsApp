@@ -14,9 +14,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/toolbar4"
-            android:background="@android:color/black"
             app:title="Health News"
-            app:titleTextColor="@android:color/holo_orange_dark"
+            app:titleTextColor="@android:color/black"
             style="@android:style/Animation"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
     </com.google.android.material.appbar.AppBarLayout>
@@ -34,7 +33,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/black"
+                android:background="@android:color/white"
                 android:orientation="vertical">
 
                 <TextView
@@ -42,8 +41,8 @@
                     android:layout_height="wrap_content"
                     android:text="Top HeadLines"
                     android:textStyle="bold"
-                    android:background="@android:color/black"
-                    android:textColor="@android:color/white"
+                    android:background="@android:color/white"
+                    android:textColor="@android:color/black"
                     android:textSize="17dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
@@ -58,6 +57,18 @@
             </LinearLayout>
 
         </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.gms.ads.AdView
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            ads:adSize="BANNER"
+            ads:adUnitId="ca-app-pub-1351937667691042/6125068531">
+        </com.google.android.gms.ads.AdView>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

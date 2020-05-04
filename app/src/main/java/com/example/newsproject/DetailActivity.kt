@@ -11,11 +11,17 @@ import android.webkit.WebViewClient
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.newsproject.TopHeadlineModel.topheadlineresponse.ArticlesItem
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdSize
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_detail.*
 
 
 class DetailActivity : AppCompatActivity() {
+
+//    lateinit var mAdView : AdView
 
     val list = arrayListOf<ArticlesItem>()
 
@@ -26,6 +32,16 @@ class DetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_detail)
 
         setSupportActionBar(toolbar)
+
+//        val adView = AdView(this)
+//        adView.adSize = AdSize.BANNER
+//        adView.adUnitId = "ca-app-pub-1351937667691042/7945895599"
+//
+//        MobileAds.initialize(this) {}
+//        mAdView = findViewById(R.id.adView)
+//        val adRequest = AdRequest.Builder().build()
+//        mAdView.loadAd(adRequest)
+//        val adSize = AdSize(300, 50)
 
         if (Build.VERSION.SDK_INT >=18){
             val window = this.window

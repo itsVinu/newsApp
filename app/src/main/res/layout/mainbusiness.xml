@@ -13,8 +13,7 @@
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:titleTextColor="@android:color/holo_orange_dark"
-            android:background="@android:color/black"
+            app:titleTextColor="@android:color/black"
             android:id="@+id/toolbar2"
             app:title="Buisness News"
             style="@android:style/Animation"
@@ -34,15 +33,15 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/black"
+                android:background="@android:color/white"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Top HeadLines"
-                    android:background="@android:color/black"
-                    android:textColor="@android:color/white"
+                    android:background="@android:color/white"
+                    android:textColor="@android:color/black"
                     android:textStyle="bold"
                     android:textSize="17dp"
                     android:layout_marginLeft="16dp"
@@ -58,6 +57,18 @@
             </LinearLayout>
 
         </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.gms.ads.AdView
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            ads:adSize="BANNER"
+            ads:adUnitId="ca-app-pub-1351937667691042/1763630626">
+        </com.google.android.gms.ads.AdView>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
